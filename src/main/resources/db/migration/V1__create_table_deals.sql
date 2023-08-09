@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS deals (
-	id BIGINT DEFAULT nextval('deals_id_seq') PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	name character varying(100) DEFAULT NULL::character varying,
 	product_cat_id bigint NOT NULL,
 	updated_at TIMESTAMP NOT NULL DEFAULT current_timestamp,
