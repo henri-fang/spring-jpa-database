@@ -1,0 +1,14 @@
+---
+version: "2.0"
+services:
+
+  database:
+    image: postgres:12.9
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./scripts/init_databases.sql:/docker-entrypoint-initdb.d/init.sql
